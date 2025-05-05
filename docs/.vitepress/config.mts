@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "游晓竹Coding",
   description: "游晓竹Coding",
+  base: "/vitepress-blog/", // 👈 顶层配置
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
         // 网站的logo
@@ -58,6 +59,5 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cunninger' }
     ],
-    base: "/vitepress-blog/"
   }
 })
