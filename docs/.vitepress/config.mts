@@ -58,6 +58,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cunninger' }
     ],
-    base: "/vitepress-blog-template/"
+    base: "/vitepress-blog/"
   }
 })
