@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "游晓竹Coding",
-  description: "游晓竹Coding",
-  base: "/vitepress-blog/", // 👈 顶层配置
+  description: "编程学习笔记",
+  base: "/CodingNotes/", // 👈 顶层配置
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
         // 网站的logo
