@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "游晓竹Coding"
-  text: "游晓竹Coding"
+  text: "编程学习笔记"
   tagline: My great project tagline
   actions:
     - theme: brand
