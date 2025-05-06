@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: /guide/操作系统/操作系统基础
+      link: /guide/每日八股/每日八股说明.html
     - theme: alt
       text: 查看所有文章
       link: /guide/
