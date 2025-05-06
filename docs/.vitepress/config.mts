@@ -6,7 +6,7 @@ import imageProcessor from './plugins/imageProcessor'
 export default defineConfig({
     title: "游晓竹Coding",
     description: "Java后端面试指南",
-    base: "/CodingNotes/",
+    base: "/",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         // 网站的logo

@@ -12,7 +12,7 @@ hero:
       link: /guide/每日八股/每日八股说明.html
     - theme: alt
       text: 查看所有文章
-      link: /guide/
+      link: /guide/每日八股/每日八股说明.html
 
 features:
   - title: Java核心
