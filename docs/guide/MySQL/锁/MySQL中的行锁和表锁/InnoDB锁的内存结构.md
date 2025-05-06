@@ -41,29 +41,30 @@ SELECT * FROM hero LOCK IN SHARE MODE;
 
 4. **type_mode:**
 这是一个32位的数，被分成了`lock_mode` 、`lock_type` 和`rec_lock_type` 三个部分，如图所示：
-![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 
 **锁的模式（lock_mode）**
 占用低4位，可选的值如下：
-- LOCK_IS（十进制的0）：表示共享意向锁，也就是IS锁。
-- LOCK_IX（十进制的1）：表示独占意向锁，也就是IX锁。
-- LOCK_S（十进制的2）：表示共享锁，也就是S锁。
-- LOCK_X（十进制的3）：表示独占锁，也就是X锁。
-- LOCK_AUTO_INC（十进制的4）：表示AUTO-INC锁。
+- `LOCK_IS`（十进制的0）：表示共享意向锁，也就是IS锁。
+- `LOCK_IX`（十进制的1）：表示独占意向锁，也就是IX锁。
+- `LOCK_AUTO_INC`（十进制的4）：表示AUTO-INC锁。
+- `LOCK_S`（十进制的2）：表示共享锁，也就是S锁。
+- `LOCK_X`（十进制的3）：表示独占锁，也就是X锁。
 
-**小贴士**：在InnoDB存储引擎中，LOCK_IS、LOCK_IX、LOCK_AUTO_INC都算是表级锁的模式，LOCK_S和LOCK_X既可以算是表级锁的模式，也可以是行级锁的模式。
+> **小贴士**：<font color="#0000ff" size="3" face="微软雅黑">在InnoDB存储引擎中，`LOCK_IS`、`LOCK_IX`、`LOCK_AUTO_INC`都算是表级锁的模式，
+`LOCK_S`和`LOCK_X`既可以算是表级锁的模式，也可以是行级锁的模式。</font>
 
 **锁的类型（lock_type）**
 占用第5～8位，不过现阶段只有第5位和第6位被使用：
-- LOCK_TABLE（十进制的16），也就是当第5个比特位置为1时，表示表级锁。
-- LOCK_REC（十进制的32），也就是当第6个比特位置为1时，表示行级锁。
+- `LOCK_TABLE`（十进制的16），也就是当第5个比特位置为1时，表示表级锁。
+- `LOCK_REC`（十进制的32），也就是当第6个比特位置为1时，表示行级锁。
 
 **行锁的具体类型（rec_lock_type）**
-使用其余的位来表示。只有在lock_type的值为LOCK_REC时，也就是只有在该锁为行级锁时，才会被细分为更多的类型：
-- LOCK_ORDINARY（十进制的0）：表示next-key锁。
-- LOCK_GAP（十进制的512）：也就是当第10个比特位置为1时，表示gap锁。
-- LOCK_REC_NOT_GAP（十进制的1024）：也就是当第11个比特位置为1时，表示正经记录锁。
-- LOCK_INSERT_INTENTION（十进制的2048）：也就是当第12个比特位置为1时，表示插入意向锁。
+使用其余的位来表示。只有在`lock_type`的值为`LOCK_REC`时，也就是只有在该锁为行级锁时，才会被细分为更多的类型：
+- `LOCK_ORDINARY`（十进制的0）：表示next-key锁。
+- `LOCK_GAP`（十进制的512）：也就是当第10个比特位置为1时，表示gap锁。
+- `LOCK_REC_NOT_GAP`（十进制的1024）：也就是当第11个比特位置为1时，表示正经记录锁。
+- `LOCK_INSERT_INTENTION`（十进制的2048）：也就是当第12个比特位置为1时，表示插入意向锁。
 - **其他的类型**：还有一些不常用的类型我们就不多说了。
 
 **is_waiting属性**
