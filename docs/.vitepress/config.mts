@@ -7,10 +7,13 @@ export default defineConfig({
     title: "游晓竹Coding",
     description: "Java后端面试指南",
     base: "/",
+    head: [
+        ['link', { rel: 'icon', href: 'https://restful.doublefenzhuan.me/public/72e7cb37-9f66-430e-b06a-f637be011309-image.png' }],
+    ],
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         // 网站的logo
-        logo: "/logo.svg",
+        logo: "https://restful.doublefenzhuan.me/public/72e7cb37-9f66-430e-b06a-f637be011309-image.png",
         // 文章右侧大纲目录
         outline: {
             level: [2, 6],
