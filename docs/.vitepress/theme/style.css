@@ -265,3 +265,50 @@
 .VPSidebar::-webkit-scrollbar-track {
     background: transparent;   /* 轨道背景 */
 }
+
+
+/* Mac风格代码块 - 单个代码块 */
+div[class*="language-"] {
+    position: relative;
+    padding-top: 30px;
+    margin: 16px 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 添加Mac风格的按钮 */
+div[class*="language-"]::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fc625d; /* 红色关闭按钮 */
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b; /* 黄色最小化和绿色最大化按钮 */
+    z-index: 2;
+}
+
+/* 代码块顶部栏 */
+div[class*="language-"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e1e4e8;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: 1;
+}
+
+/* 调整代码内容位置 */
+div[class*="language-"] pre {
+    margin-top: 0;
+    z-index: 0;
+}
+
