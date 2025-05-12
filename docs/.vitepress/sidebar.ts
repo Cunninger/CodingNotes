@@ -52,7 +52,7 @@ function processDirectory(dirPath: string, dirName: string): SidebarItem {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true })
     const result: SidebarItem = {
         text: formatText(dirName),
-        collapsed: false,
+        collapsed: true,
         items: []
     }
 
