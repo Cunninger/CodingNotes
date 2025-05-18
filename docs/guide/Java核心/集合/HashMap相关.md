@@ -87,3 +87,11 @@
 这里可以举个例子，2 & (8-1),3 & (8-1) 和 2 & (9-1),3 & (9-1) 后面两者都是会碰撞的。前者不会。
 
 参考:https://www.cnblogs.com/dalianpai/p/14295818.html
+
+## 和 ConcurrentHashMap 区别
+1. key或value为null时抛出异常（ConcurrentHashMap不允许null键或值）
+```java
+final V putVal(K key, V value, boolean onlyIfAbsent) {
+    if (key == null || value == null) throw new NullPointerException();
+```
+2. 
