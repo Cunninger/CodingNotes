@@ -1,4 +1,4 @@
-import {defineConfig} from 'vitepress'
+import { defineConfig } from 'vitepress'
 import { sidebar } from './sidebar'
 import imageProcessor from './plugins/imageProcessor'
 
@@ -47,15 +47,15 @@ export default defineConfig({
             },
         },
         nav: [
-            {text: '首页', link: '/'},
-            {text: '指南', link: '/guide/'},
-            {text: '关于', link: '/about'}
+            { text: '首页', link: '/' },
+            { text: '指南', link: '/guide/' },
+            { text: '关于', link: '/about' }
         ],
 
         sidebar,
 
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/cunninger'}
+            { icon: 'github', link: 'https://github.com/cunninger' }
         ],
     },
 })
